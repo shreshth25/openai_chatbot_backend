@@ -4,7 +4,7 @@ from flask_cors import CORS
 from flask_socketio import SocketIO
 from dotenv import load_dotenv
 import os
-import mysql.connector
+# import mysql.connector
 load_dotenv()
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -13,12 +13,12 @@ CORS(app)
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
-mysql  = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='root',
-    database='chat'
-)
+# mysql  = mysql.connector.connect(
+#     host='localhost',
+#     user='root',
+#     password='root',
+#     database='chat'
+# )
 
 
 def allow_cors(f):
